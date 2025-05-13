@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Default Title{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: #007BFF;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+    }
+    .navbar {
+      background-color: #343a40 !important;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .nav-link.disabled {
+      color: #ccc !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!--Nav section start -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servis">Servis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Nav section end -->
+
+  <div class="container">
+    {% block content %}
+
+    
+    {% endblock %}
+  </div>
+
+</body>
+</html>
