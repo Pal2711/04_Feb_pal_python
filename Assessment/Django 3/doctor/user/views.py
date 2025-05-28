@@ -8,23 +8,16 @@ def index(request):
     return render(request, 'index.html')
 
 def login(request):
-    msg = ""
     if request.method == "POST":
-        unm = request.POST["username"]
-        pas = request.POST["password"]
-
-        # Authenticate user using your model's data
-        user = usersignup.objects.filter(username=unm, password=pas).first()
-
+        unm = request.POST.get("username")
+        pas = request.POST.get("password")
+        user = usersignup.objects.filter(username = unm , password = pas)
         if user:
-            print("Login successful")
-            request.session["user"] = unm
-            request.session["userid"] = user.id 
-            return redirect("index")  # Redirect to home page or dashboard
+            print("login Successfull!")
+            return redirect("index")
         else:
-            msg = "Invalid username or password"  # Show message if credentials are incorrect
-
-    return render(request, 'login.html', {"msg": msg})
+            print("Errror login failld")
+    return render(request, 'login.html')
 
 
 def signup(request):
